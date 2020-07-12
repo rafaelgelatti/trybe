@@ -1,0 +1,21 @@
+body {
+    font-family: monospace;
+}
+.list {
+    list-style: circle;
+}
+.blood-color {
+    color: red;
+}
+.scientific-name {
+    font-style: italic;
+}
+table {
+    width: 25%;
+    border-collapse: collapse;
+    padding: 8px;
+}
+td {
+    border: 2px solid black;
+    padding: 8px;
+}
