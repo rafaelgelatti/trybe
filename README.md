@@ -1,4 +1,4 @@
---- Rafael Gelatti's Repository ---
+<strong>--- Rafael Gelatti's Repository ---</strong>
 
 This is where I save my exercises, projects and learnings from the Software Developer course at Trybe.
 
@@ -6,7 +6,7 @@ I am still getting the hang of it, and organizing it.
 
 It's a never ending process.
 
---- MAIN ---
+<strong>--- MAIN ---</strong>
 
 There are directories separated by #id, and each one of them contains a README.md file that explains their content.
 
@@ -20,4 +20,4 @@ World losers and world forsakers<br>
 On whom the pale moon gleams<br>
 Yet we are the movers and the shakers<br>
 Of the world forever it seems"<br>
-Arthur O'Shaughnessy
+<em>Arthur O'Shaughnessy</em>
