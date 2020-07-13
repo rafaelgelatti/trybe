@@ -20,4 +20,4 @@ World losers and world forsakers<br>
 On whom the pale moon gleams<br>
 Yet we are the movers and the shakers<br>
 Of the world forever it seems"<br>
-<em>Arthur O'Shaughnessy</em>
+<em>Ode, Arthur O'Shaughnessy</em>
