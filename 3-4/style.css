@@ -1,21 +1,63 @@
+
 body {
-    font-family: monospace;
+    font-family: Ubuntu, monospace;
 }
+
+header h1 {
+    background-color: cyan;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+nav a {
+    margin-right: 10px;    
+}
+
 .list {
     list-style: circle;
 }
+
 .blood-color {
     color: red;
 }
+
 .scientific-name {
     font-style: italic;
 }
+
 table {
     width: 25%;
     border-collapse: collapse;
     padding: 8px;
 }
+
 td {
     border: 2px solid black;
     padding: 8px;
+}
+
+.img_container {
+    border: 5px solid cyan;
+    height: 180px;
+    margin-top: 30px;
+}
+
+.biblio_ref {
+    margin-top: 30px;
+    background-color: darkcyan;
+}
+
+aside {
+    float: right;
+    padding: 50px;
+    background-color: darkgrey;
+}
+
+
+footer {
+    background-color: darksalmon;
+    padding: 1px;
+    margin-top: 30px;
+    font-family: monospace;
+    font-size: 15px;
 }
