@@ -1,7 +1,7 @@
 3-1 HTML e CSS - Estruturas de página
 
 exercise1.html - Dê um título ao seu poema<br>
-Para praticar os conceitos básicos de HTML, você vai escrever e marcar um poema. Para começar, qual será o título do seu poema? Usando a tag <h1>h1</h1> que vimos, adicione um cabeçalho ao seu poema. Esse será o seu título.
+Para praticar os conceitos básicos de HTML, você vai escrever e marcar um poema. Para começar, qual será o título do seu poema? Usando a tag "h1" que vimos, adicione um cabeçalho ao seu poema. Esse será o seu título.
 
 exercise2.html - Marque o texto<br>
 Criamos essa página com as palavras de "Você pode aprender qualquer coisa", um vídeo feito pela Khan Academy. Usando as tags <strong>strong</strong> e <em>em</em> que você acabou de aprender, marque o texto para mostrar o que você acha deve ser enfatizado e destacado.
