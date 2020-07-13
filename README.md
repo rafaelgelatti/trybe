@@ -10,7 +10,7 @@ It's a never ending process.
 
 There are directories separated by #id, and each one of them contains a README.md file that explains their content.
 
-portfolio web: https://www.rafaelgelatti.github.io/
+web portfolio: https://www.rafaelgelatti.github.io/
 
 "We are the music makers<br>
 And we are the dreamers of the dreams<br>
