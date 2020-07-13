@@ -11,3 +11,6 @@ O que você quer aprender? Um monte de coisas, eu aposto! Vamos criar uma lista 
 
 exercise4.html - Adicionar imagens<br>
 Se você pudesse fazer a viagem perfeita, para onde você iria? Que animais você veria? Que comida você comeria? Adicione imagens à página web após cada tag de parágrafo para compartilhar sua viagem perfeita com o mundo.
+
+exercise5.html - Adicione links internos<br>
+Essa é uma longa página web que descreve cangurus, e cada título de seção tem um atributo id. Descubra quais são esses atributos id, e então carregue os atributos href dos links na parte superior para que eles apontem para a seção apropriada.
