@@ -1,5 +1,8 @@
 <strong>4-3 JavaScript - Lógica de Programação e Algoritmos</strong>
 
+Ainda realizando!<br>
+Atualmente no 4(que não está pronto)
+
 <strong>drafts.js</strong> is for drafts
 
 <strong>exercise_1.js</strong> 1- Para o primeiro exercício de hoje, faça um programa que, dado um valor n qualquer, seja n > 1,<br>

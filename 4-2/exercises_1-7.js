@@ -14,7 +14,7 @@ for (let i = 0; i < numbers.length; i += 1) {
     sumOfAll += numbers[i];
 }
 
-console.log(sumOfAll);
+console.log("Soma total: " + sumOfAll);
 
 //3 - Para o terceiro exercício, calcule e imprima a média aritmética dos valores contidos no array;
 
@@ -52,7 +52,7 @@ console.log("Maior valor: " + higherNumber);
 
 let odds = 0;
 
-for (i = 0; i < numbers.length; i+= 1) {
+for (i = 0; i < numbers.length; i += 1) {
     if (numbers[i] % 2 !== 0) {
         odds += 1;
     }

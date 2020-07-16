@@ -2,7 +2,7 @@
 //Atenção! Note que esse exercício é bem mais complexo que o anterior! Não basta, aqui, imprimir somente asteriscos.
 //Você precisará de uma lógica para imprimir espaços também.
 
-let n = 4;
+let n = 7;
 let output = "";
 let symbol = "*";
 let symbolColumn = n;
@@ -19,4 +19,4 @@ for (let outsideIndex = 0; outsideIndex < n; outsideIndex += 1) {
     console.log(output);
     output = '';
     symbolColumn -= 1;
-}
+}   
