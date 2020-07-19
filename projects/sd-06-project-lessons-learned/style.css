@@ -1,0 +1,90 @@
+body {
+    background-color: rgb(253, 251, 251);
+    font-family: monospace;
+}
+
+#cabecalho {
+    top: 0px;
+    position: fixed;
+    width: 90%;
+    background-color: transparent;
+    z-index: -1;
+}
+
+#titulo {
+    color: rgb(255 , 166 , 158);
+    font-family: Calibri, sans-serif;
+    font-size: 40px;
+    text-align: right;
+}
+
+.barra_de_navegacao {
+    font-family: Calibri, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 5px;
+    letter-spacing: 0,5em;
+    background-color: rgb(174 , 217 , 224);
+    max-width: 60%;
+}
+
+.barra_de_navegacao a {
+    margin-right: 25px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#minha_foto {
+    max-width: 15%;
+    border: 2px solid rgb(174 , 217 , 224);
+}
+
+.titulo_tabela {
+    margin-top: 30px;
+}
+
+.tabela {
+    width: 30%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+}
+
+.tabela th, .tabela td {
+    border: 1px solid rgb(255 , 166, 158);
+    padding: 5px;
+}
+
+.tabela th {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 5px;
+    background-color: rgb(134 , 22 , 87);
+    color: rgb(221 , 255 , 247);
+    text-align: left;
+}
+
+ul li {
+    line-height: 2em;
+}
+
+.lado-esquerdo {
+    max-width: 65%;
+    float: left;
+}
+
+.lado-direito {
+    padding: 8px;
+    max-width: 30%;
+    text-align: right;
+    float: right;
+    background-color: rgb(255 , 166 , 158);
+    margin-bottom: 30px;
+}
+
+#rodape {
+    background-color: rgb(174 , 217 , 224);
+    clear: both;
+}
