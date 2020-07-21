@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1</title>
+    <style>
+        /* 4 */
+        .paragraphs {
+            font-size: 5em;
+            font-family: Ubuntu, sans-serif;
+            background-color: steelblue;
+            color: tan;
+        }
+    </style>
+</head>
+<body>
+    <!-- 5 -->
+    <h2 id="page-title">Título</h2>
+    <p id="paragraph" class='paragraphs'>Dê uma cor para este parágrafo!</p>
+    <h4 id="subtitle">Subtítulo</h4>
+    <p id="second-paragraph" class='paragraphs'>Segundo parágrafo!</p>
+
+    <script>
+        var paragraph = document.getElementById("paragraph");
+        paragraph.style.color = "red";
+
+        //1
+        document.getElementById('page-title').innerHTML = 'Willy Wonka and the Chocolate Factory[ORIGINAL]';
+
+        //2
+        let secondParagraph = document.getElementById('second-paragraph');
+        secondParagraph.style.backgroundColor = "green";
+        secondParagraph.style.fontSize = "3em";
+        secondParagraph.style.fontFamily = "monospace";
+        secondParagraph.style.fontWeight = "300";
+
+        //5, 6
+        let changeFirstP = document.getElementsByClassName('paragraphs')[0];
+        changeFirstP.style.backgroundColor = 'yellow';
+
+        //3
+        document.getElementById('subtitle').innerHTML = 'Gene Wilder as Willy Wonka';
+
+        //7
+        document.getElementsByTagName('h4')[0].innerHTML += ', The REAL Willy Wonka!';
+    </script>
+</body>
+</html>
+
+<!-- 1 - Recupere o elemento que contém o título da página e faça algo com ele, como alterá-lo para o nome do seu filme favorito. -->
+
+<!-- 2 - Agora recupere o segundo parágrafo e use sua criatividade para alterá-lo. -->
+
+<!-- 3 - Por fim, recupere o subtítulo e altere-o também. -->
+
+<!-- 4 - Adicione ao seu HTML uma classe com alguns estilos para os seus dois parágrafos. -->
+
+<!-- 5 - Recupere os seus parágrafos via código JavaScript, usando a função getElementsByClassName; -->
+
+<!-- 6 - Altere algum estilo do primeiro deles. -->
+
+<!-- 7 - Recupere o subtítulo pela tag. -->

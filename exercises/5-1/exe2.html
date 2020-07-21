@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+</head>
+<body>
+<div id="stack">
+	<div class="column_left"> 
+		<div>
+        	<div></div>
+    	</div>
+    	<div>
+        	<div></div>
+    	</div>
+ 	</div>
+ 	<div class="column_right">
+    	<div>
+        	<div></div>
+    	</div>
+    	<div>
+        	<div></div>
+    	</div>
+  	</div>
+</div>
+<style>
+
+#stack{
+	height:20rem;
+	width:20rem;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-evenly;
+	align-items:center;
+	border: solid black 4px;
+}
+
+.column_left, .column_right{
+	
+    height:18rem;
+	width:8rem;
+    margin:auto;
+	display:flex;
+	flex-direction:column;
+    justify-content:space-evenly;
+    border: solid black 4px;
+    }
+
+.column_left>div, .column_right>div{
+	height:5rem;
+	width:5rem ;
+	display:flex;
+	align-items:center;
+    justify-content:center;
+    margin:auto;
+    border: solid black 4px;
+}  
+
+div>div>div>div{
+    height:2.5rem;
+	width:2.5rem; 
+    border: solid black 4px;
+}
+
+</style>
+<script>
+
+    //whole thing
+    let stack = document.getElementById('stack');
+    stack.style.backgroundColor = 'red';
+
+    //left column
+    let leftColumn = document.getElementsByClassName('column_left')[0];
+    leftColumn.style.backgroundColor = 'blue';
+
+    //right column
+    let rigthColumn = document.getElementsByClassName('column_right')[0];
+    rigthColumn.style.backgroundColor = 'green';
+
+    //inner left
+    let innerLeft = document.getElementsByClassName('column_left')[0].getElementsByTagName('div')[0];
+    let innerLeft2 = document.getElementsByClassName('column_left')[0].getElementsByTagName('div')[2];
+    innerLeft.style.backgroundColor = 'magenta';
+    innerLeft2.style.backgroundColor = 'magenta';
+
+    //inner right
+    let innerRigth = document.getElementsByClassName('column_right')[0].getElementsByTagName('div')[0];
+    let innerRigth2 = document.getElementsByClassName('column_right')[0].getElementsByTagName('div')[2];
+    innerRigth.style.backgroundColor = 'purple';
+    innerRigth2.style.backgroundColor = 'purple';
+
+    //inner top
+    let innerTop = document.getElementsByClassName('column_left')[0].getElementsByTagName('div')[1];
+    let innerTop2 = document.getElementsByClassName('column_right')[0].getElementsByTagName('div')[1];
+    innerTop.style.backgroundColor = 'pink';
+    innerTop2.style.backgroundColor = 'pink';
+
+    //inner bottom
+    let innerBottom = document.getElementsByClassName('column_left')[0].getElementsByTagName('div')[3];
+    let innerBottom2 = document.getElementsByClassName('column_right')[0].getElementsByTagName('div')[3];
+    innerBottom.style.backgroundColor = 'orange';
+    innerBottom2.style.backgroundColor = 'orange';
+
+</script>
+</body>
+</html>
