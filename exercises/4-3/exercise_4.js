@@ -1,21 +1,20 @@
 //4- Depois, faça uma pirâmide com n asteriscos de base:
 
 let n = 5;
-let line = '';
 let symbol = '*';
-let half = (n / 2) + 0.5
+let line = '';
+let half = 0;
 
-for(outterIndex = 1; outterIndex <= n; outterIndex += 2) {
-  for (let index = 1; index <= n; index += 1) {
-    if (index % 2 !== 0) {
-      if (index === half) {
-        line += symbol;
-      } else {
-        line += ' ';
-      }
-    }
-  }
-
-  console.log(line);
-  line = '';
+if (n % 2 !== 0) {
+  half = (n / 2) + 0.5;
+} else {
+  half = n / 2;
 }
+
+for (let i = 0; i < n; i += 1) {
+  line += '-';
+}
+
+line[half] = '*';
+
+console.log(line);
