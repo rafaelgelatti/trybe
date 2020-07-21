@@ -32,3 +32,6 @@ Valor esperado no console: Bem-vinda, Margarida
 
 <strong>exe12.js</strong> - Crie uma função que receba uma string word e outra string ending. Verifique se a string ending é o final da string word.<br>
 Considere que a string ending sempre será menor que a string word.
+
+<strong>exe13.js</strong> - (Difícil) Faça um programa que receba uma string em algarismos romanos e retorne o número que a string representa.<br>
+Atenção! Esse exercício já apareceu no processo seletivo de uma grande multinacional!
