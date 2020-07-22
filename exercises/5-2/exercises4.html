@@ -97,20 +97,13 @@
       //8
       let list = document.createElement('ul');
       document.querySelector('.right-content').appendChild(list);
+      let writtenNumbers = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+
       for (let i = 0; i < 10; i += 1) {
         let topic = document.createElement('li');
         document.getElementsByTagName('ul')[0].appendChild(topic);
+        document.querySelectorAll('li')[i].innerHTML = writtenNumbers[i];
       }
-      document.querySelectorAll('li')[0].innerHTML = 'one';
-      document.querySelectorAll('li')[1].innerHTML = 'two';
-      document.querySelectorAll('li')[2].innerHTML = 'three';
-      document.querySelectorAll('li')[3].innerHTML = 'four';
-      document.querySelectorAll('li')[4].innerHTML = 'five';
-      document.querySelectorAll('li')[5].innerHTML = 'six';
-      document.querySelectorAll('li')[6].innerHTML = 'seven';
-      document.querySelectorAll('li')[7].innerHTML = 'eight';
-      document.querySelectorAll('li')[8].innerHTML = 'nine';
-      document.querySelectorAll('li')[9].innerHTML = 'ten';
 
       //9
       let h3a = document.createElement('h3');
@@ -141,10 +134,8 @@
       document.querySelector('.center-content').parentNode.style.backgroundColor = 'green';
 
       //15
-      let rem1 = document.querySelectorAll('li')[9];
-      let rem2 = document.querySelectorAll('li')[8];
-      document.querySelector('ul').removeChild(rem1);
-      document.querySelector('ul').removeChild(rem2);
+      document.querySelector('ul').lastElementChild.remove();
+      document.querySelector('ul').lastElementChild.remove();
 
     </script>
 </html>
