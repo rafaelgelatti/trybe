@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises 2 5-2</title>
+</head>
+<body>
+    <div id="paiDoPai">
+        <div id="pai">
+            <div id="primeiroFilho"></div>
+            <div id="elementoOndeVoceEsta">
+                <div id="primeiroFilhoDoFilho"></div>
+                <div id="segundoEUltimoFilhoDoFilho"></div>
+            </div>
+            Atenção!
+            <div id="terceiroFilho"></div>
+            <div id="quartoEUltimoFilho"></div>
+        </div>
+    </div>
+
+    <script>
+
+        //1
+        let irmao = document.createElement('div');
+        let irmaoP = document.createElement('p');
+        irmaoP.innerHTML = 'irmao de elementoOndeVoceEsta';
+        document.getElementById('pai').appendChild(irmao);
+        irmao.appendChild(irmaoP);
+
+        //2
+        let maisUmFilho = document.createElement('div');
+        let maisUmFilhoP = document.createElement('p');
+        maisUmFilhoP.innerHTML = 'mais um filho de elementoOndeVoceEsta';
+        document.getElementById('elementoOndeVoceEsta').append(maisUmFilho);
+        maisUmFilho.appendChild(maisUmFilhoP);
+
+        //3
+        let filho = document.createElement('div');
+        let filhoP = document.createElement('p');
+        filhoP.innerHTML = 'filho do primeiroFilhoDoFilho';
+        document.getElementById('primeiroFilhoDoFilho').appendChild(filho);
+        filho.appendChild(filhoP);
+
+        //4
+        let access = document.getElementById('primeiroFilhoDoFilho').parentNode.nextElementSibling;
+        console.log(access);
+
+    </script>
+</body>
+</html>
+
+<!-- 1. Crie um irmão para elementoOndeVoceEsta. -->
+<!-- 2. Crie um filho para elementoOndeVoceEsta. -->
+<!-- 3. Crie um filho para primeiroFilhoDoFilho. -->
+<!-- 4. A partir desse filho criado, acesse terceiroFilho. -->

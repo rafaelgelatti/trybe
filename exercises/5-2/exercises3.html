@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises 3 5-2</title>
+</head>
+<body>
+
+    <div id="paiDoPai">
+        <div id="pai">
+            <div id="primeiroFilho"></div>
+            <div id="elementoOndeVoceEsta">
+                <div id="primeiroFilhoDoFilho"></div>
+                <div id="segundoEUltimoFilhoDoFilho"></div>
+            </div>
+            Atenção!
+            <div id="terceiroFilho"></div>
+            <div id="quartoEUltimoFilho"></div>
+        </div>
+    </div>
+
+    <script>
+
+        document.getElementById('elementoOndeVoceEsta').removeChild(document.getElementById('segundoEUltimoFilhoDoFilho'));
+        document.getElementById('pai').removeChild(document.getElementById('primeiroFilho'));
+        document.getElementById('pai').removeChild(document.getElementById('terceiroFilho'));
+        document.getElementById('pai').removeChild(document.getElementById('quartoEUltimoFilho'));
+        document.getElementById('body').removeChild(document.getElementById('paiDoPai'));
+
+    </script>
+    
+</body>
+</html>
+
+<!-- Remova todos os elementos da página, menos pai, elementoOndeVoceEsta e primeiroFilhoDoFilho. -->

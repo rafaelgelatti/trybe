@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises 5.2</title>
+</head>
+<body>
+    <div id="paiDoPai">
+        <div id="pai">
+            <div id="primeiroFilho"></div>
+            <div id="elementoOndeVoceEsta">
+                <div id="primeiroFilhoDoFilho"></div>
+                <div id="segundoEUltimoFilhoDoFilho"></div>
+            </div>
+            Atenção!
+            <div id="terceiroFilho"></div>
+            <div id="quartoEUltimoFilho"></div>
+        </div>
+    </div>
+
+    <script>
+        
+        //1
+        let one = document.getElementById('elementoOndeVoceEsta');
+        console.log(one);
+
+        //2
+        let two = document.getElementById('elementoOndeVoceEsta').parentNode;
+        two.style.backgroundColor = 'orange';
+
+        //3
+        let three = document.getElementById('primeiroFilhoDoFilho');
+        three.innerHTML = 'Added text';
+
+        //4
+        let four = document.getElementById('pai').childNodes[1];
+        console.log(four);
+
+        //5
+        let five = document.getElementById('elementoOndeVoceEsta').childNodes[1];
+        console.log(five);
+
+        //6
+        let six = document.getElementById('elementoOndeVoceEsta').parentNode;
+        console.log(six.innerText);
+
+        //7
+        let seven = document.getElementById('elementoOndeVoceEsta').nextElementSibling;
+        console.log(seven);
+
+        //8
+        let eight = document.getElementById('pai').childNodes[5];
+        console.log(eight);
+
+    </script>
+
+</body>
+</html>
+
+<!-- 1. Acesse o elemento elementoOndeVoceEsta. -->
+<!-- 2. Acesse pai a partir de elementoOndeVoceEsta e adicione uma color a ele. -->
+<!-- 3. Acesse o primeiroFilhoDoFilho e adicione um texto a ele. Você se lembra dos vídeos da aula anterior, como fazer isso? -->
+<!-- 4. Acesse o primeiroFilho a partir de pai. -->
+<!-- 5. Agora acesse o primeiroFilho a partir de elementoOndeVoceEsta. -->
+<!-- 6. Agora acesse o texto Atenção! a partir de elementoOndeVoceEsta. -->
+<!-- 7. Agora acesse o terceiroFilho a partir de elementoOndeVoceEsta. -->
+<!-- 8. Agora acesse o terceiroFilho a partir de pai. -->
