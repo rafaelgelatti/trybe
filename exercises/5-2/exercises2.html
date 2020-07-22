@@ -23,6 +23,7 @@
 
         //1
         let irmao = document.createElement('div');
+        irmao.id = 'irmao de elementoOndeVoceEsta';
         let irmaoP = document.createElement('p');
         irmaoP.innerHTML = 'irmao de elementoOndeVoceEsta';
         document.getElementById('pai').appendChild(irmao);
@@ -30,17 +31,13 @@
 
         //2
         let maisUmFilho = document.createElement('div');
-        let maisUmFilhoP = document.createElement('p');
-        maisUmFilhoP.innerHTML = 'mais um filho de elementoOndeVoceEsta';
+        maisUmFilho.id = 'maisUmFilho de elementoOndeVoceEsta';
         document.getElementById('elementoOndeVoceEsta').append(maisUmFilho);
-        maisUmFilho.appendChild(maisUmFilhoP);
 
         //3
         let filho = document.createElement('div');
-        let filhoP = document.createElement('p');
-        filhoP.innerHTML = 'filho do primeiroFilhoDoFilho';
+        filho.className = 'filho de primeiroFilhoDoFilho';
         document.getElementById('primeiroFilhoDoFilho').appendChild(filho);
-        filho.appendChild(filhoP);
 
         //4
         let access = document.getElementById('primeiroFilhoDoFilho').parentNode.nextElementSibling;
