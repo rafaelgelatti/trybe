@@ -1,20 +1,34 @@
 //4- Depois, faça uma pirâmide com n asteriscos de base:
 
-let n = 5;
+let n = 19;
 let symbol = '*';
-let line = '';
+let output = '';
 let half = 0;
 
-if (n % 2 !== 0) {
-  half = (n / 2) + 0.5;
-} else {
-  half = n / 2;
+function findHalf(input) {
+  if (input % 2 === 0) {
+    return input / 2;
+  }
+
+  return (input / 2) + 0.5;
 }
 
-for (let i = 0; i < n; i += 1) {
-  line += '-';
+half = findHalf(n);
+let lineStart = half - 1;
+let rightIndex = half;
+let leftIndex = half;
+
+for (lineStart; lineStart < n; lineStart += 1 ) {
+  for (let column = 1; column <= n; column += 1) {
+    if (column > leftIndex && column < rightIndex) {
+      output += symbol;
+    } else {
+      output += ' ';
+    }
+  }
+
+  console.log(output);
+  output = '';
+  leftIndex -= 1;
+  rightIndex += 1;
 }
-
-line[half] = '*';
-
-console.log(line);

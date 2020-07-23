@@ -44,11 +44,11 @@ for (let i = 0; i < n; i += 1) {
 //exe4
 //Não precisa imprimir os espaços depois!
 
- n = 5;
+n = 5;
 let lineIndex;
 let lineColumn;
 let lineInput = '';
- symbol = '*';
+symbol = '*';
 
 let midOfMatrix = (n + 1) / 2;
 let controlLeft = midOfMatrix;
@@ -66,19 +66,19 @@ for (lineIndex = 0; lineIndex <= midOfMatrix; lineIndex++) {
   lineInput = '';
   controlRight--;
   controlLeft++;
-};
+}
 
 //exe5
 
 
-let n = 7;
-let lineInput = [];
+n = 7;
+lineInput = [];
 let baseMatrix = [];
-let symbol = '*';
+symbol = '*';
 let matrix = [];
-let midOfMatrix = (n + 1) / 2;
-let controlLeft = 1;
-let controlRight = n - 2;
+midOfMatrix = (n + 1) / 2;
+controlLeft = 1;
+controlRight = n - 2;
 
 for (let lineColumn = 0; lineColumn < n; lineColumn++) {
   baseMatrix[lineColumn] = symbol;

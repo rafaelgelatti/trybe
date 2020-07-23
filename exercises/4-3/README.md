@@ -18,7 +18,7 @@ Você precisará de uma lógica para imprimir espaços também.
 
 <strong>bonus_1.js</strong> 5- Faça uma pirâmide com n asteriscos de base que seja vazia no meio. Assuma que o valor de n será sempre ímpar:
 
-<strong>bonus_2.js</strong> Faça um programa que diz se um número definido numa variável é primo ou não.
+<strong>bonus_2.js</strong> 6 - Faça um programa que diz se um número definido numa variável é primo ou não.
 
 Um número primo é um número que só é divisível por 1 e por ele mesmo, ou seja, a divisão dele com quaisquer outros números dá resto diferente de zero.
 
