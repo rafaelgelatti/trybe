@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Calculator</title>
+</head>
+<body>
+
+  <label>Square this number:
+    <input type="number" id="square-input" size="2">
+  </label>
+  <button id="square-button">Calculate</button>
+  <br><br>
+  
+  <label>Half this number:
+    <input type="number" id="half-input" size="2">
+  </label>
+  <button id="half-button">Calculate</button>
+  <br><br>
+  
+  <label>
+    Fraction:
+    <input type="number" id="percent1-input" size="2">
+  </label>
+  <label>
+    Whole:
+    <input type="number" id="percent2-input" size="2">
+  </label>
+  <button id="percent-button">Calculate</button>
+  <br><br>
+  
+  <label>Calculate area of circle with radius:
+    <input type="number" id="area-input" size="2">
+  </label>
+  <button id="area-button">Calculate</button> 
+  <br><br>
+  <div id="solution"></div>
+
+  <script>
+
+    let square = document.getElementById('square-input');
+    let squareButton = document.getElementById('square-button');
+    squareButton.addEventListener('mouseover', function () {
+        solutionDiv.innerHTML = 'Square of ' + square.value + ' = ' + (square.value * square.value);
+    });
+
+    let half = document.getElementById('half-input');
+    let halfButton = document.getElementById('half-button');
+    halfButton.addEventListener('mouseover', function() {
+        solutionDiv.innerHTML = 'Half of ' + half.value + ' = ' + (half.value / 2);
+    });
+
+    let percent1Input = document.getElementById('percent1-input');
+    let percent2Input = document.getElementById('percent2-input');
+    let percentButton = document.getElementById('percent-button');
+    percentButton.addEventListener('mouseover', function() {
+        let perc = (percent1Input.value * 100) / percent2Input.value;
+        solutionDiv.innerHTML = percent1Input.value + ' is ' + perc + '% of ' + percent2Input.value;
+    });
+
+    let radius = document.getElementById('area-input');
+    let circleAreaButton = document.getElementById('area-button');
+    circleAreaButton.addEventListener('mouseover', function() {
+        let circleArea = Math.PI * (radius.value * 2);
+        solutionDiv.innerHTML = circleArea;
+    });
+
+    let solutionDiv = document.getElementById('solution');
+
+  </script>
+  
+</body>
+</html>
