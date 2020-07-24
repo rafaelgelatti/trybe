@@ -32,4 +32,5 @@ They should keep walking back and forth forever and ever.<br>
 <strong>Bonus #3:</strong> When the cat reaches the middle of the screen, replace the img with an image of a cat dancing, keep it dancing for 10 seconds,<br>
 and then replace the img with the original image and have it continue the walk.
 
-<strong>exercicio9.html</strong>
+<strong>exercicises9.html</strong> Seu trabalho é adicionar o evento correto a cada um dos três elementos button da página e um evento ao elemento input,<br>
+de forma que a função mais apropriada definida no JavaScript seja acionada quando quem usa interagir com cada elemento, clicando ou digitando, por exemplo.
