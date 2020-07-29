@@ -3,6 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        nav {
+            height: 50px;
+        }
+
+        body {
+            font-family: ubuntu;
+        }
+
+        article.text, article.preferences {
+            height: 250px;
+        }
+
+        header {
+            height: 100px;
+        }
+
+        #red, #green, #blue, #original {
+            height: 50px;
+            width: 50px; 
+            border-style: solid;
+            border-color: black;
+            display: inline-block;
+        }
+
+        #red {
+            background-color: red;
+        }
+
+        #green {
+            background-color: green;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #original {
+            background-color: white;
+        }
+
+        #ms, #ubu {
+            background-color: transparent;
+            border: solid 1px black;
+            padding: 15px;
+            font-size: 20px;
+        }
+    </style>
     <title>Exercise 5-4</title>
 </head>
 <body>
@@ -16,13 +64,103 @@
     </nav>
     
     <section>
-        <article>
-            <h2 class='title-article'>Lorem Ipsum</h2>
+        <article class='text'>
+            <h2>Lorem Ipsum</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         </article>
     </section>
 
-    <footer></footer>
+    <section>
+        <article class='preferences'>
+            <h2>Pick your preferences!</h2>
+            <h3>Enter your name please: <input type='text' id='name' autocomplete='off'><button id='nameButton'>Ok</button></h3>
+            <h3>Background Color:</h3>
+            <button id='red'></button>
+            <button id='green'></button>
+            <button id='blue'></button>
+            <button id='original'></button>
+            <h3>Font:</h3>
+            <button id='ms'>Monospace</button>
+            <button id='ubu'>Ubuntu</button>
+        </article>
+    </section>
+
+    <footer>
+        <h4>HTML made by Rafael Gelatti</h4>
+    </footer>
+
+    <script>
+        let name;
+        let favouriteColor;
+
+        let redbutton = document.getElementById('red');
+        redbutton.addEventListener('click', function() {
+            document.body.style.backgroundColor = 'red';
+            document.body.style.color = 'white';
+            redbutton.style.backgroundColor = 'darkred';
+            greenButton.style.backgroundColor = 'green';
+            blueButton.style.backgroundColor = 'blue';
+            favouriteColor = 'red';
+            localStorage.setItem('color', favouriteColor);
+        });
+
+        let greenButton = document.getElementById('green');
+        greenButton.addEventListener('click', function() {
+            document.body.style.backgroundColor = 'green';
+            document.body.style.color = 'white';
+            redbutton.style.backgroundColor = 'red';       
+            greenButton.style.backgroundColor = 'darkgreen';
+            blueButton.style.backgroundColor = 'blue';
+            favouriteColor = 'green';
+            localStorage.setItem('color', favouriteColor);
+        });
+
+        let blueButton = document.getElementById('blue');
+        blueButton.addEventListener('click', function() {
+            document.body.style.backgroundColor = 'blue';
+            document.body.style.color = 'white';
+            redbutton.style.backgroundColor = 'red';
+            greenButton.style.backgroundColor = 'green';
+            blueButton.style.backgroundColor = 'darkblue';
+            favouriteColor = 'blue';
+            localStorage.setItem('color', favouriteColor);
+        });
+
+        let originalButton = document.getElementById('original');
+        originalButton.addEventListener('click', function() {
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
+            redbutton.style.backgroundColor = 'red';
+            greenButton.style.backgroundColor = 'green';
+            blueButton.style.backgroundColor = 'blue';
+            favouriteColor = 'white';
+            localStorage.setItem('color', favouriteColor);
+        });
+
+        let nameButton = document.getElementById('nameButton');
+        nameButton.addEventListener('click', function() {
+            name = document.getElementById('name').value;
+            localStorage.setItem('name', name);
+        });
+
+        let msButton = document.getElementById('ms');
+        msButton.addEventListener('click', function() {
+            document.body.style.fontFamily = 'monospace';
+            localStorage.setItem('font', 'monospace');
+        });
+
+        let ubuButton = document.getElementById('ubu');
+        ubuButton.addEventListener('click', function() {
+            document.body.style.fontFamily = 'ubuntu';
+            localStorage.setItem('font', 'ubuntu');
+        });
+
+        window.onload = function() {
+            document.body.style.backgroundColor = localStorage.getItem('color');
+            document.body.style.fontFamily = localStorage.getItem('font');
+            alert('Welcome back ' + localStorage.getItem('name'));
+        }
+    </script>
 
 </body>
 </html>
