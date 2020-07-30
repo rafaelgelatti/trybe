@@ -1,0 +1,38 @@
+.color {
+  border: 1px solid black;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+}
+
+.color1 {
+  background-color: black;
+}
+
+.color2 {
+  background-color: tomato;
+}
+
+.color3 {
+  background-color: thistle;
+}
+
+.color4 {
+  background-color: steelblue;
+}
+
+.input-board-size {
+  margin-bottom: 25px;
+}
+
+.line {
+  display: flex;
+}
+
+.pixel {
+  background-color: white;
+  border: 1px solid black;
+  float: left;
+  height: 40px;
+  width: 40px;
+}
