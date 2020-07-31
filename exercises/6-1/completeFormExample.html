@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Form Example</title>
+</head>
+<body>
+  
+  <h1>My Form</h1>
+  <p>This is an Form Example</p>
+
+  <form action='' method='post' enctype='multipart/form-data'>
+    
+    <div>
+      <label for=''>Nome</label>
+      <input name='name' required='required' placeholder='Input your name' type='text'>
+    </div>
+
+    <div>
+      <label for=''>E-mail</label>
+      <input name='email' required='required' placeholder='Input your E-mail' type='text'>
+    </div>
+
+    <div>
+      <label for=''>Select your city</label>
+      <select required='required' name='city'>
+        <option selected='selected' value=''>Select</option>
+        <option value='1'>Porto Alegre</option>
+        <option value='2'>London</option>
+        <option value='3'>Tokyo</option>
+      </select>
+    </div>
+
+    <div>
+        <label for=''>Your pic</label>
+        <input required='required' name='pic' type='file'>
+    </div>
+
+    <div>
+      <p>Gender:</p>
+      <label for='gender1'><input name='gender' id='gender1' value='f' type='radio'>Feminine</label>
+      <label for='gender2'><input name='gender' id='gender2' value='m' type='radio'>Masculine</label>
+    </div>
+
+    <div>
+      <label for=''>Bio</label>
+      <textarea name='bio' placeholder='Your bio here' required='required' cols='30' rows='5'></textarea>
+    </div>
+
+    <div>
+      <label for=''>Password</label>
+      <input required='required' placeholder='Enter your password' name='pass' type='password'>
+    </div>
+
+    <div>
+      <label for='news'>
+        <input name='newsletter' id='news' type='checkbox'>You wish to receive the news?
+      </label>
+    </div>
+
+    <div>
+      <button name='send' type='submit'>Submit</button>
+    </div>
+
+    <div>
+      <label for='date'>Date:</label>
+      <input type='date' name='date' id='name'>
+    </div>
+
+  </form>
+
+</body>
+</html>

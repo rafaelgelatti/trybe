@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='style.css'>
+  <title>6.1 form exercise - RAFAEL GELATTI - TRYBE</title>
+</head>
+<body>
+
+  <fieldset>
+    <legend>Dados pessoais</legend>
+
+    <legend>Nome</legend>
+    <input type="text" name="nome" id="nome" maxlength="40" required placeholder="nome">
+    
+    <legend>E-mail</legend>
+    <input type="text" name="email" id="email" maxlength="50" required>
+
+    <legend>CPF</legend>
+    <input type="text" name="cpf" id="cpf" maxlength="11" required pattern="[0-9]{1-11}">
+
+    <legend>Cidade</legend>
+    <input type="text" name="cidade" id="cidade" placeholder='cidade' required maxlength="28">
+
+    <legend>Estado</legend>
+    <select name="estado" id="estado" required></select>
+
+    <legend>Tipo de moradia</legend>
+    <input type="radio" name='moradia' id='casa'><label for='casa'>Casa</label>
+    <input type="radio" name='moradia' id='ap'><label for='ap'>Apartamento</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Última experiência profissional</legend>
+
+    <legend>Resumo do currículo</legend>
+    <textarea name="cv" id="cv" cols="100" rows="10" maxlength="1000" required></textarea>
+
+    <legend>Cargo</legend>
+    <textarea name="cargo" id="cargo" cols="100" rows="1" maxlength="40" required></textarea>
+
+    <legend>Descrição do cargo</legend>
+    <textarea name="descricao" id="descricao" cols="100" rows="5" maxlength="500" required></textarea>
+
+    <legend>Data de início</legend>
+    <input type="date" name="data" id="data" required max='2020-07-31'>
+
+    <legend>Salvar dados</legend>
+    <button type="submit" name='botao' id='botao'>Enviar</button>
+
+  </fieldset>
+
+  <script type='text/javascript' src='./script.js'></script>
+
+</body>
+</html>
