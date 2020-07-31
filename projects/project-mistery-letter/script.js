@@ -76,6 +76,6 @@ createLetterButton.addEventListener('click', function () {
       letterGenerated.appendChild(spanTag);
     }
 
-    // console.log(letterGenerated);
+    console.log(letterGenerated);
   }
 });
