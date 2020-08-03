@@ -8,7 +8,7 @@ Para que você não tenha que pensar no conteúdo da página, utilize este link 
 Até aqui, nenhuma novidade, mas essa demanda exige que você aplique preferências das pessoas leitoras na página para melhorar a experiência de leitura dessas pessoas.<br>
 As pessoas devem ter o poder de alterar:<br>
 Cor de fundo da tela;<br>
-Cor do texto;<br>
-Tamanho da fonte;<br>
-Espaçamento entre as linhas do texto;<br>
-Tipo da fonte (Font family).
+<em>TO-DO</em> Cor do texto;<br>
+<em>TO-DO</em> Tamanho da fonte;<br>
+<em>TO-DO</em> Espaçamento entre as linhas do texto;<br>
+<em>TO-DO</em> Tipo da fonte (Font family).

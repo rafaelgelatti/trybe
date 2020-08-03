@@ -21,6 +21,6 @@ exe8 - O script entende aquela string com espaços armazenada na variável, como
 
 exe9 - O script recebe uma quantidade indefinida de argumentos e armazena em um array. Depois ele identifica um por um se estes argumentos são documentos, arquivos ou nenhum dos dois.
 
-exe10 - Ainda não realizado.
+<em>TO-DO</em> exe10 - Escreva um Shell Script que renomeie todos os arquivos do diretório atual que terminam em ".png", de forma que o nome do arquivo comece com a data atual no formato "YYYY-MM-DD". Por exemplo, se tiver um arquivo com o nome "kitten.png" no diretório atual, e a data de hoje for 16/04/2020, o script deverá mudar o nome do arquivo para "2020-04-16-kitten.png".
 
-exe11 - Ainda não realizado.
+<em>TO-DO</em> exe11 - Modifique o Shell Script do exercício anterior para receber o diretório onde estão os arquivos e a extensão dos arquivos que devem ser modificados como argumento (ou parâmetro). Adicione também um mensagem mostrando como eram o como vão ficar os nomes dos arquivos a serem modificados.
