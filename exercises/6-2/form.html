@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6.2 form exercise - RAFAEL GELATTI - TRYBE - Stylized</title>
+  <link rel='stylesheet' type='text/css' href='./style.css'>
+  <link rel="stylesheet" type="text/css" href="./semantic.min.css">
+</head>
+<body>
+  <form class='ui form'>
+    <h4 class='ui dividing header'>Dados pessoais</h4>
+
+    <div class='field'>
+      <label>Nome Completo</label>
+      <div class='field'>
+        <input type="text" name="nome" id='nome' required='required' placeholder="Nome Completo">
+      </div>
+    </div>
+    
+    <div class='field'>
+      <label>E-mail</label>
+      <div class='field'>
+        <input type="email" name="email" id ='email' placeholder="E-mail">
+      </div>
+    </div>
+    
+    <div class='field'>
+      <label>CPF</label>
+      <div class='cpf'>
+        <input type="text" name="cpf" id='cpf' pattern="[0-9]{11}" placeholder="CPF">
+      </div>
+    </div>
+
+    <div class='field'>
+      <label>Cidade</label>
+      <div class='field'>
+        <input type="text" name="cidade" id='cidade' placeholder="Cidade">
+      </div>
+    </div>
+
+    <div class='field'>
+      <label>Estado</label>
+      <select name="estado" id='estado' class='ui search dropdown'></select>
+    </div>
+
+    <div class='ui form'>
+      <div class='inline fields'>
+        <label for='moradia'>Tipo de moradia:</label>
+        <div class='field'>
+          <input type="radio" name='moradia' id='casa'>
+          <label for=casa>Casa</label>
+        </div>
+        <div class='field'>
+          <input type="radio" name='moradia' id='ap'>
+          <label for='ap'>Apartamento</label>
+        </div>
+      </div>
+    </div>
+
+    <div class='field'>
+      <label>Resumo do currículo</label>
+      <textarea id='cv'></textarea>
+    </div>
+
+    <div class='field'>
+      <label>Cargo e descrição</label>
+      <textarea id='cargo'></textarea>
+    </div>
+
+    <div class='field'>
+      <label>Data de início</label>
+      <input type="date" name="data" max='2020-07-31'>
+    </div>
+
+    <button class='ui submit button' id='botao' type='button'>Enviar</button>
+  </form>
+
+  <script type='text/javascript' src='./script.js'></script>
+
+</body>
+</html>

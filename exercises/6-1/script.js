@@ -10,8 +10,6 @@ function generateStates() {
 
 window.onload = generateStates();
 
-
-
 const submitButton = document.getElementById('botao');
 submitButton.addEventListener('click', function () {
   const nome = document.getElementById('nome');
