@@ -11,7 +11,7 @@ function generateStates() {
 window.onload = generateStates();
 
 const submitButton = document.getElementById('botao');
-submitButton.addEventListener('click', function () {
+submitButton.addEventListener("submit", function () {
   if (document.getElementById('return')) {
     const ret = document.getElementById('return');
     document.getElementsByTagName('form')[0].removeChild(ret);
@@ -39,12 +39,33 @@ submitButton.addEventListener('click', function () {
     valorRadio = document.getElementById('casa').nextElementSibling.innerHTML;
   } else if (document.getElementById('ap').checked) {
     valorRadio = document.getElementById('ap').nextElementSibling.innerHTML;
-  } 
+  }
+
+  //REGEX
+  //Retira numeros
+  const input = document.getElementById('teste').value;
+  console.log(input.match(/\w/gi));
 
   const cv = document.getElementById('cv');
   const cargo = document.getElementById('cargo');
 
   createDiv(nome.value, email.value, cpf.value, cidade.value, selectedState, valorRadio, cv.value, cargo.value);
+});
+
+//prevent default CPF
+const cpf = document.getElementById('cpf');
+cpf.addEventListener("change", function (event) {
+  let cpfString = '';
+  cpfString += event.target.value;
+  //Testa se a string é apenas de numeros -- / 'abre'   ^ 'começa com'   \d 'apenas numeros'   + 'um ou mais'   $ 'termina'   / 'fecha'
+  let isCPF = /^\d{11}$/.test(cpfString);
+  if (!isCPF) {
+    event.preventDefault();
+    alert("CPF Inválido");
+    cpf.value = '';
+  } else {
+    cpf.value;
+  }
 });
 
 function createDiv(nome, email, cpf, cidade, estado, cv, cargo, moradia) {
@@ -60,3 +81,8 @@ function createDiv(nome, email, cpf, cidade, estado, cv, cargo, moradia) {
   }
   form.appendChild(div);
 }
+
+const clear = document.getElementById('limpa');
+clear.addEventListener('click', function () {
+  document.getElementsByTagName('form')[0].reset();
+});
