@@ -10,8 +10,8 @@ function generateStates() {
 
 window.onload = generateStates();
 
-const submitButton = document.getElementById('botao');
-submitButton.addEventListener("submit", function () {
+const submitForm = document.getElementsByTagName('form')[0];
+submitForm.addEventListener("submit", function () {
   if (document.getElementById('return')) {
     const ret = document.getElementById('return');
     document.getElementsByTagName('form')[0].removeChild(ret);
