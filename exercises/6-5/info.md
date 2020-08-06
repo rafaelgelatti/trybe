@@ -14,3 +14,5 @@ largura da página for maior que 1500px; Dica: use Flexbox
 4- Faça com que a segunda div desapareça quando a largura da tela estiver entre 600px e 900px;
 
 5- Faça com que a primeira div desapareça quando a largura da tela for até 600px.
+
+6- Bônus: altere o código para que os elementos sejam alinhados usando Flexbox.
