@@ -28,4 +28,6 @@ de um outro arquivo, por exemplo style-mobile-p1.css;
 2- Ainda no código do exercício anterior, altere as cores de cada um dos elementos da página para uma escala de cinza quando a<br>
 orientação da página mudar para a horizontal (landscape);
 
-<strong>exercises1.html</strong> - self-explanatory
+<strong>exercise1.html && exercise1.css</strong> - Practicing
+
+<strong>exercise2.html && exercise2.css</strong> - Practicing

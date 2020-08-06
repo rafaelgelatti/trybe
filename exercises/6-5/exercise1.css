@@ -1,17 +1,46 @@
 body {
-
+  margin: 25px;
+  max-width: 1000px;
 }
 h1 {
-
+  font-size: 1.5em;
 }
 h2 {
-
+  font-size: 1.2em;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
 }
 
 figure {
-    margin: 0;
+  margin: 10px;
+}
+
+@media (min-width: 800px) {
+  body {
+    background-color: yellow;
+    font-size: 1.1em;
+    margin: 35px;
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+@media (min-width: 1300px) {
+  body {
+    background-color: green;
+    font-size: 1.2em;
+    margin: 55px;
+  }
 }
