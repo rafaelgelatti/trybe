@@ -1,0 +1,31 @@
+.center {
+  width: 100%;
+}
+
+.top {
+  background: yellow;
+  width: 100%;
+}
+
+.top h1 {
+  color: #f00;
+}
+
+.column-container {
+  display: block;
+}
+
+.columns {
+  margin-top: 5px;
+  width: 100%;
+}
+
+@media only screen and (orientation: landscape) {
+  .top {
+    background-color: grey;
+  }
+
+  .top h1 {
+    color: #3a3a3a;
+  }
+}

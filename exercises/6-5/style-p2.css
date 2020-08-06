@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.center {
+  background: #333;
+  height: 100%;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.top {
+  background: #f00;
+  height: 20%;
+  text-align: center;
+  width: 100%;
+}
+
+.top h1 {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.column-container {
+  display: flex;
+}
+
+.columns {
+  background: #999;
+  text-align: center;
+  width: 50%;
+}
