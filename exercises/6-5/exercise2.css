@@ -3,4 +3,23 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
+  font-family: Ubuntu, sans-serif;
+}
+
+@media (max-width: 640px) {
+  body {
+    background-color: yellow;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1280px) {
+  body {
+    background-color: orange;
+  }
+}
+
+@media (min-width: 1281px) {
+  body {
+    background-color: green;
+  }
 }

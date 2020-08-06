@@ -31,3 +31,5 @@ orientação da página mudar para a horizontal (landscape);
 <strong>exercise1.html && exercise1.css</strong> - Practicing
 
 <strong>exercise2.html && exercise2.css</strong> - Practicing
+
+<strong>exercise3.html && exercise3.css</strong> - Practicing
