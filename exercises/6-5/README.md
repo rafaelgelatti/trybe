@@ -1,4 +1,4 @@
-<h3>6.5 CSS Responsive - Mobile first</strong>
+<h3>6.5 CSS Responsive - Mobile first</h3>
 
 ---
 
