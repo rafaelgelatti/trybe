@@ -163,7 +163,6 @@ const createReport = (object, professor) => {
   const totalArray = Object.entries(object);
   let reportStudents = 0
   for (value in totalArray) {
-    console.log(totalArray[value]);
     if (totalArray[value][1].professor === professor) {
       report.professor = totalArray[value][1].professor;
       report.aulas.push(totalArray[value][1].materia);
