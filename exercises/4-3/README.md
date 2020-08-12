@@ -3,22 +3,20 @@
 Ainda realizando!<br>
 Atualmente no 4(que não está pronto)
 
-<strong>drafts.js</strong> is for drafts
-
-<strong>exercise_1.js</strong> 1- Para o primeiro exercício de hoje, faça um programa que, dado um valor n qualquer, seja n > 1,<br>
+<strong>exercise_1.js</strong> Para o primeiro exercício de hoje, faça um programa que, dado um valor n qualquer, seja n > 1,<br>
 imprima na tela um quadrado feito de asteriscos de lado de tamanho n.
 
-<strong>exercise_2.js</strong> 2- Para o segundo exercício, faça o mesmo que antes, mas que imprima um triângulo retângulo com 5 asteriscos de base.
+<strong>exercise_2.js</strong> Para o segundo exercício, faça o mesmo que antes, mas que imprima um triângulo retângulo com 5 asteriscos de base.
 
-<strong>exercise_3.js</strong> 3- Agora inverta o lado do triângulo.<br>
+<strong>exercise_3.js</strong> Agora inverta o lado do triângulo.<br>
 Atenção! Note que esse exercício é bem mais complexo que o anterior! Não basta, aqui, imprimir somente asteriscos.<br>
 Você precisará de uma lógica para imprimir espaços também.
 
-<strong>exercise_4.js</strong> 4- Depois, faça uma pirâmide com n asteriscos de base:
+<strong>exercise_4.js</strong> Depois, faça uma pirâmide com n asteriscos de base:
 
-<strong>bonus_1.js</strong> <em>TO-DO</em> 5- Faça uma pirâmide com n asteriscos de base que seja vazia no meio. Assuma que o valor de n será sempre ímpar:
+<strong>bonus_1.js</strong> <em>TO-DO</em> Faça uma pirâmide com n asteriscos de base que seja vazia no meio. Assuma que o valor de n será sempre ímpar:
 
-<strong>bonus_2.js</strong> <em>TO-DO</em> 6 - Faça um programa que diz se um número definido numa variável é primo ou não.
+<strong>bonus_2.js</strong> <em>TO-DO</em> Faça um programa que diz se um número definido numa variável é primo ou não.
 
 Um número primo é um número que só é divisível por 1 e por ele mesmo, ou seja, a divisão dele com quaisquer outros números dá resto diferente de zero.
 
