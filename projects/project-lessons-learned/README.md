@@ -1,16 +1,4 @@
-<strong> Projeto 01 da Trybe - Lessons Learned (HTML e CSS)</strong>
-
----
-
-## Requisitos Obrigatórios:
-
-Você deve criar um site que com uma série de informações a respeito do que você aprendeu nos últimos três blocos, estilizado de forma apropriada.
-
-**Em outras palavras, uma página de `Lessons Learned`**;
-
-**Lembre-se de verificar sua página no [achecker](https://achecker.ca/checker/index.php).**
-
-## Requisitos do projeto
+Projeto elaborado durante o curso Trybe, assim como todos neste repositório.
 
 ### 1 - O corpo da página deve possuir uma cor de fundo específica
 
@@ -103,5 +91,3 @@ Você deve criar um site que com uma série de informações a respeito do que v
 - Utilizar a classe 'lado-direito'
 
 - Verificar se os elementos com as classes lado-direito e lado-esquerdo estão posicionados corretamente
-
----
