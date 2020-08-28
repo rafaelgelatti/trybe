@@ -11,193 +11,120 @@ eslint no-unused-vars: [
 
 const data = require('./data');
 
-// destructuring to verify ids, spread to receive n number of arrays
+// rest because can be more than one parameter
 function animalsByIds(...ids) {
+  // destructure the element, so it's easier to compare
   return data.animals.filter(({ id }, index) => id === ids[index]);
 }
 
-// filter for the animals, MAGIC flatMap to access residents and every to test age
 function animalsOlderThan(animal, age) {
-  return data.animals.filter(item => item.name === animal).flatMap(item => item.residents)
-  .every(item => item.age > age);
+  // filter the animals by name
+  return data.animals.filter(({ name }) => name === animal)
+  // flatmap to bring up the array
+  .flatMap(animalMatch => animalMatch.residents)
+  // check if all of them are older than the parameter
+  .every(resident => resident.age > age);
 }
 
 function employeeByName(employeeName) {
-  let employee = {};
-
-  // filter the employee, returns the object within the array or the empty obj
-  // returns only the first, gotta check this later, too specific
-  const employeeObject = data.employees
-  .filter(({ firstName, lastName }) => (firstName === employeeName || lastName === employeeName));
-  if (employeeObject.length !== 0) { employee = employeeObject[0]; }
-  return employee;
+  // return empty object if no parameters are passed
+  if (!employeeName) { return {}; }
+  // find by name and return the object
+  return data.employees
+  .find(({ firstName, lastName }) => firstName === employeeName || lastName === employeeName);
 }
 
 function createEmployee(personalInfo, associatedWith) {
-  const newEmployee = {};
-  const { id, firstName, lastName } = personalInfo;
-  const { managers, responsibleFor } = associatedWith;
-  newEmployee.id = id;
-  newEmployee.firstName = firstName;
-  newEmployee.lastName = lastName;
-  newEmployee.managers = managers;
-  newEmployee.responsibleFor = responsibleFor;
-
-  // data.employees.push(newEmployee);
-  return newEmployee;
+  // rest to get all the content from both parameters
+  return { ...personalInfo, ...associatedWith };
 }
 
-// get the manager ids and filters it
 function isManager(id) {
-  return data.employees.flatMap(employee => employee.managers).some(item => item === id);
+  // get all the managers ids and compares them with parameter
+  return data.employees.flatMap(employee => employee.managers)
+  .some(manager => manager === id);
 }
 
-function addEmployee(id, firstName, lastName, managers, responsibleFor) {
-  const newEmployee = { id: '', firstName: '', lastName: '', managers: [], responsibleFor: [] };
-  if (id !== '') { newEmployee.id = id; }
-  if (firstName !== '') { newEmployee.firstName = firstName; }
-  if (lastName !== '') { newEmployee.lastName = lastName; }
-
-  // had to check if they were array
-  if (Array.isArray(managers)) { newEmployee.managers = managers; }
-  if (Array.isArray(responsibleFor)) { newEmployee.responsibleFor = responsibleFor; }
+// parameters with default values
+function addEmployee(id = '', firstName = '', lastName = '', managers = [], responsibleFor = []) {
+  // passing the parameters to an array to be able to use reduce
+  const newEmployeeArray = [id, firstName, lastName, managers, responsibleFor];
+  const newEmployee = newEmployeeArray.reduce((acc, element) => ({
+    // the object has predefined keys
+    ...acc, element,
+  }), { id, firstName, lastName, managers, responsibleFor });
   data.employees.push(newEmployee);
 }
 
 function animalCount(species) {
-  if (species === undefined) {
-    const animals = data.animals.map(animal => animal.name);
-    const count = data.animals.map(animal => animal.residents.length);
-    const output = {};
-
-    // had the idea, learned how to do it in here:
-    // https://stackoverflow.com/questions/39127989/creating-a-javascript-object-from-two-arrays
-    for (let index = 0; index < animals.length; index += 1) {
-      output[animals[index]] = count[index];
-    }
-    return output;
+  if (!species) {
+    return data.animals.reduce((acc, element) => ({
+      // had to pass acc before with rest
+      // learned here:
+      // https://medium.com/@vmarchesin/using-array-prototype-reduce-in-objects-using-javascript-dfcdae538fc8
+      ...acc,
+      [element.name]: element.residents.length,
+    }), {});
   }
-  const speciesCount = data.animals.filter(animal => animal.name === species)
-  .map(animal => animal.residents.length).find(animal => animal);
-  return speciesCount;
+  return data.animals.filter(({ name }) => name === species)
+  .reduce((acc, animal) => acc + animal.residents.length, 0);
 }
 
-// got the keys to be able to use length
 function entryCalculator(entrants) {
-  if (entrants === undefined || Object.keys(entrants).length === 0) { return 0; }
+  if (!entrants) { return 0; }
+  const { Adult: adult, Senior: senior, Child: child } = data.prices;
   const keys = Object.keys(entrants);
-  const values = Object.values(entrants);
-  let totalSum = 0;
-  keys.forEach((key, index) => {
-    if (key === 'Adult') { totalSum += (data.prices.Adult * values[index]); }
-    if (key === 'Senior') { totalSum += (data.prices.Senior * values[index]); }
-    if (key === 'Child') { totalSum += (data.prices.Child * values[index]); }
-  });
-  return totalSum;
+  return keys.reduce((acc, element) => {
+    if (element === 'Adult') acc += (adult * entrants.Adult);
+    if (element === 'Senior') acc += (senior * entrants.Senior);
+    if (element === 'Child') acc += (child * entrants.Child);
+    return acc;
+  }, 0);
 }
 
-const defaultMap = () => {
-  const locationArr = ['NE', 'NW', 'SE', 'SW'];
-  const output = {};
+function getResidentsNames(species, options) {
+  const { sorted, sex } = options;
+  const output = data.animals.filter(animal => animal.name === species)
+  .flatMap(animal => animal.residents);
+  if (sex && !sorted) {
+    return output.filter(resident => resident.sex === sex)
+    .map(resident => resident.name);
+  }
+  if (sex && sorted) {
+    return output.filter(resident => resident.sex === sex)
+  .map(resident => resident.name).sort();
+  }
+  if (!sex && sorted) { return output.map(resident => resident.name).sort(); }
+  return output.map(resident => resident.name);
+}
 
-  locationArr.forEach((location) => {
-    output[location] = data.animals.filter(animal => animal.location === location)
-    .map(animal => animal.name);
+function getAnimalNameAsKey(location, options) {
+  const output = [];
+  let animalObject = {};
+  data.animals.filter(animal => animal.location === location)
+  .map(animal => animal.name).forEach((animal) => {
+    // tests if has 'includeNames' option
+    if (!Object.keys(options).includes('includeNames')) { output.push(animal); return output; }
+    animalObject[animal] = getResidentsNames(animal, options);
+    output.push(animalObject);
+    animalObject = {};
+    return output;
   });
   return output;
-};
+}
 
-const checkIfSorted = (keys, values, output) => {
-  for (let index = 0; index < keys.length; index += 1) {
-    if (keys.includes('sorted') && values[index]) { output.sort(); }
-  }
-  return output;
-};
-
-const pushNamesWithoutSex = (animalsArr, output) => {
-  for (let index = 0; index < animalsArr.length; index += 1) {
-    output.push(animalsArr[index].name);
-  }
-  return output;
-};
-
-const pushNames = (animalsArr, output, sex) => {
-  for (let index = 0; index < animalsArr.length; index += 1) {
-    if (animalsArr[index].sex === sex) { output.push(animalsArr[index].name); }
-  }
-  return output;
-};
-
-const animalNames = (options, animalsArr, sex) => {
-  const output = [];
-  if (sex === undefined) {
-    pushNamesWithoutSex(animalsArr, output);
-  } else {
-    pushNames(animalsArr, output, sex);
-  }
-  const keys = Object.keys(options);
-  const values = Object.values(options);
-  checkIfSorted(keys, values, output);
-  return output;
-};
-
-const animalObject = (species, location, options) => {
-  const { sex } = options;
-  const keys = Object.keys(options);
-  const values = Object.values(options);
-  const output = {};
-  let hasReturn = false;
-  const animalsArr = data.animals.filter(animal => animal.location === location)
-  .filter(animal => animal.name === species)
-  .flatMap(animal => animal.residents);
-  for (let index = 0; index < keys.length; index += 1) {
-    if (keys.includes('sex') && values[index] === sex && !hasReturn) {
-      output[species] = animalNames(options, animalsArr, sex);
-      hasReturn = true;
-    } else if (!hasReturn) {
-      output[species] = animalNames(options, animalsArr);
-    }
-  }
-  return output;
-};
-
-const mapLocation = (location, options) => {
-  const output = {};
-  output[location] = [];
-  let animalsArr = data.animals.filter(animal => animal.location === location);
-  animalsArr = animalsArr.map(animal => animal.name);
-  for (let index = 0; index < animalsArr.length; index += 1) {
-    output[location].push(animalObject(animalsArr[index], location, options));
-  }
-  return output;
-};
-
-// the no-option return is not specified, so i returned what the test wants
-const noOptions = (location) => {
-  const output = [];
-  output[location] = [];
-  const noOptionReturn = data.animals.map(animal => animal.name).find(animal => animal);
-  output[location].push(noOptionReturn);
-  return output;
-};
-
-// 'includes' I learned from prof Ícaro, monster
 function animalMap(options) {
-  if (options === undefined) { return defaultMap(); }
-  const output = {};
-  const keys = Object.keys(options);
-  const values = Object.values(options);
-  for (let index = 0; index < keys.length; index += 1) {
-    if (keys.includes('includeNames') && values[index]) {
-      Object.assign(output, mapLocation('NE', options));
-      Object.assign(output, mapLocation('NW', options));
-      Object.assign(output, mapLocation('SE', options));
-      Object.assign(output, mapLocation('SW', options));
-    } else {
-      Object.assign(output, noOptions('NE'));
-    }
+  const locations = ['NE', 'NW', 'SE', 'SW'];
+  if (!options) {
+    return locations.reduce((acc, location) => ({
+      ...acc,
+      [location]: data.animals.filter(animal => animal.location === location)
+      .map(animal => animal.name),
+    }), {});
   }
-  return output;
+  return locations.reduce((acc, location) => ({
+    ...acc, [location]: getAnimalNameAsKey(location, options),
+  }), {});
 }
 
 const returnSchedule = day => `Open from ${data.hours[day].open}am until ${(data.hours[day].close) - 12}pm`;
@@ -236,7 +163,8 @@ function schedule(dayName) {
 
 // i use 'find' to get the object out of the array, and be able to access it
 const findAnimal = (id) => {
-  const firstId = id.find(item => item);
+  const firstId = id.flatMap(animal => animal.responsibleFor)
+  .find(item => item);
   const output = [];
   const oldestAnimal = data.animals.filter(animal => animal.id === firstId)
   .flatMap(animal => animal.residents)
@@ -250,7 +178,7 @@ const findAnimal = (id) => {
 
 function oldestFromFirstSpecies(id) {
   const animalId = data.employees
-  .filter(employee => employee.id === id).flatMap(animal => animal.responsibleFor);
+  .filter(employee => employee.id === id);
   return findAnimal(animalId);
 }
 
