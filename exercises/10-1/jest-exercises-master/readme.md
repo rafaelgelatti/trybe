@@ -1,4 +1,4 @@
-# Jest Exercises
+# Jest Exercises - https://github.com/iamgique/jest-exercises
 
 # Prerequisite
 

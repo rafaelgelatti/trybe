@@ -8,7 +8,17 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
-
+  let vowelCount = 0;
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  const input = str.toLowerCase();
+  for (let index in input) {
+    if (vowels.includes(input[index])) {
+      vowelCount += 1;
+    }
+  }
+  return vowelCount;
 }
+
+vowels('Hi There!');
 
 module.exports = vowels;
