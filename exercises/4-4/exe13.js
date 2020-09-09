@@ -22,3 +22,36 @@
 
 // Atenção! Quando você tem um número pequeno à direita de um número grande, eles devem ser somados. Exemplo: XI = 10 + 1 = 11. No entanto, se o número pequeno está à esquerda de um número maior que ele, ele deve ser subtraído. Exemplo: IX = 10 - 1 = 9.
 
+const romanNumerals = {
+  I: 1,
+  V: 5,
+  X: 10,
+  L: 50,
+  C: 100,
+  D: 500,
+  M: 1000,
+}
+
+function romanAlgorithm(input) {
+  input = input.toUpperCase();
+  // input = 'DCCLXXXIX'
+  let output = 0;
+  for (let index = 0; index < input.length; index += 1) {
+    if (romanNumerals[input[index]] < romanNumerals[input[index + 1]]) {
+      output += (romanNumerals[input[index + 1]] - romanNumerals[input[index]]);
+      index += 1;
+    } else {
+      output += romanNumerals[input[index]];
+    }
+  }
+  return `${input}: ${output}`;
+}
+
+console.log(romanAlgorithm('xiX'));
+console.log(romanAlgorithm('xii'));
+console.log(romanAlgorithm('dcc'));
+console.log(romanAlgorithm('xiX'));
+console.log(romanAlgorithm('mmcdxxi'));
+console.log(romanAlgorithm('dcclxxxix'));
+console.log(romanAlgorithm('ccxlvi'));
+console.log(romanAlgorithm('xxxix'));
