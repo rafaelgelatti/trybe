@@ -9,7 +9,6 @@ function findHalf(input) {
   if (input % 2 === 0) {
     return input / 2;
   }
-
   return (input / 2) + 0.5;
 }
 
