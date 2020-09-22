@@ -6,6 +6,7 @@ class MyForm extends React.Component {
 
     this.handleInput = this.handleInput.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.getStates = this.getStates.bind(this);
 
     this.state = {
       name: '',
@@ -13,6 +14,36 @@ class MyForm extends React.Component {
       cpf: '',
       adress: '',
       city: '',
+      state: '',
+      arr: [
+        'Acre',
+        'Alagoas',
+        'Amapá',
+        'Amazonas',
+        'Bahia',
+        'Ceará',
+        'Distrito Federal',
+        'Espirito Santo',
+        'Goiás',
+        'Maranhão',
+        'Mato Grosso do Sul',
+        'Mato Grosso',
+        'Minas Gerais',
+        'Pará',
+        'Paraíba',
+        'Paraná',
+        'Pernambuco',
+        'Piauí',
+        'Rio de Janeiro',
+        'Rio Grande do Norte',
+        'Rio Grande do Sul',
+        'Rondônia',
+        'Roraima',
+        'Santa Catarina',
+        'São Paulo',
+        'Sergipe',
+        'Tocantins'
+      ],
     }
   }
 
@@ -36,7 +67,19 @@ class MyForm extends React.Component {
     }
   }
 
+  getStates() {
+    const { arr } = this.state;
+    for(let state in arr) {
+      return <option>{arr[state]}</option>
+    }
+  }
+
   render() {
+    const { arr } = this.state;
+    const estados = [];
+    for (let state in arr) {
+      estados.push(<option>{arr[state]}</option>);
+    }
     return (
       <form>
         <fieldset>
@@ -58,6 +101,10 @@ class MyForm extends React.Component {
         <fieldset>
           <legend>Cidade</legend>
           <input id='city' type='text' onChange={this.handleInput} onBlur={this.handleBlur} maxLength='28' required />
+        </fieldset>
+        <fieldset>
+          <legend>Estado</legend>
+          <select>{estados}</select>
         </fieldset>
       </form>
     );
