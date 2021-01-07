@@ -1,2 +1,2 @@
-Projeto elaborado durante o curso Trybe, assim como todos neste repositório.
-Project developed during Trybe course, as all the others in this repository.
+Projeto elaborado em dupla durante o curso Trybe, assim como todos neste repositório.
+Project developed as a duo during Trybe course, as all the others in this repository.
